@@ -1,8 +1,19 @@
-const Field = require("./field")
-
-let field = new Field("Cowfield", 300, 400, "Barley", "18th February")
+const FarmManager = require("./farmManager")
 
 
 
-console.log(field)
-console.log(field.calculateHectares())
+
+
+
+
+
+
+
+// let appleTreeFarm = new Farm([cowfield, top, hillside, bigField, upperRiver, lowerRiver, southside], [ryezapon, berbelikar, quadranis])
+farmManager = new FarmManager
+console.log(farmManager.checkField("Cowfield"))
+console.log(farmManager.checkLastSprayed())
+console.log(farmManager.checkChemicalsFromProvider())
+console.log(farmManager.orderChemical("Ryezapon"))
+console.log(farmManager.checkChemicalArrival())
+// console.log(farmManager.calculateTotalPrice())

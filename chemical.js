@@ -1,15 +1,25 @@
 class Chemical {
-  constructor() {
-    this.name = "Cowfield",
-    this.cropUsage = 300;
-    this.pricePerLitre = 400;
-    this.applicationFrequency = "6 weeks"
+  constructor(name, cropUsage, pricePerLitre, applicationFrequency) {
+    this.name = name,
+    this.cropUsage = cropUsage;
+    this.pricePerLitre = pricePerLitre;
+    this.applicationFrequency = applicationFrequency
   }
 
-  calculateHectares = () => {
-    let hectare = (this.width * this.length) / 10000
-    return hectare
+  getPricePerLitre = () => {
+    let pricePerLitre = this.pricePerLitre.replace(/\D/g, "")
+
+    return parseInt(pricePerLitre)
   }
+
+  getApplicationsFrequency = () => {
+    return this.applicationFrequency
+  }
+
+  getChemicalName = () => {
+    return this.name
+  }
+
 
 }
 
