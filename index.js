@@ -28,7 +28,7 @@ farmManager.checkAllFields()
 
 console.log("")
 console.log("Selecting a new Field")
-farmManager.selectField("Cowfield")
+farmManager.selectField("Hillside")
 
 console.log("")
 console.log("Checking Last spread")
@@ -39,11 +39,14 @@ console.log("Checking chemicals from provider")
 farmManager.checkChemicalsFromProvider()
 
 console.log("")
+// "Ryezapon", "Winter Wheat", "£240", "6 weeks"
+// "Berbelikar", "Barley", "£156", "4 weeks"
+// "Quadranis", "Sugar Beet", "£191", "9 weeks"
 console.log("Order new chemical")
 farmManager.orderChemical("Ryezapon")
 
 console.log("")
-console.log("Arriving")
+console.log("Checking chemical arrival and application day")
 farmManager.checkChemicalArrival()
 
 console.log("")

@@ -7,6 +7,7 @@ class FarmManager {
     this.currentChemical;
     this.chemicalProvider = new ChemicalProvider
     this.chemicalsNames = []
+    this.newApplicationDate;
   }
 
   addField = (field) => {
@@ -60,45 +61,57 @@ class FarmManager {
     let chemicals = this.chemicalProvider.getChemicals()
 
     chemicals.forEach(chemical => {
-      if (chemicalName === chemical.name) {
+
+      if (chemicalName === chemical.name && chemical.cropUsage === this.currentField.crop) {
         this.currentChemical = chemical
+        console.log(this.currentChemical)
+        console.log("Chemical ordered " + this.currentChemical.name + "\nApplication frequency " + "\n" + this.currentChemical.applicationFrequency)
       }
     })
-    console.log("Chemical ordered " + this.currentChemical.name)
     return this.currentChemical
   }
 
+
+
   checkChemicalArrival = () => {
-    let date = this.currentField.getFormatedDate()
-    console.log(date)
+    let months = ['January', 'February', 'March', 'April', 'May', 'June',
+      'July', 'August', 'September', 'October', 'November', 'December'
+    ]
+    let dateOfArrival = this.currentField.getFormatedDate()
+    let dateOfApplication = this.currentField.getFormatedDate()
     let frequency = this.currentChemical.getApplicationsFrequency().replace(/\D/g, "")
-    console.log(frequency, "Frequency")
-    let weeks = parseInt(frequency) * 7
 
-    let arrivalDate = date.setDate(date.getDate() + weeks)
-  
-    // .replace(/\D/g, "")
-    console.log(new Intl.DateTimeFormat('en-US').format(arrivalDate));
-    console.log(new Date(arrivalDate))
-    console.log(new Date(arrivalDate).getDate().toString())
-    console.log(frequency.replace(/\D/g, ""))
-    console.log(new Date(arrivalDate).getMonth())
+    let days = (parseInt(frequency) * 7)
+
+    let applicationDay = dateOfApplication.setDate(dateOfApplication.getDate() + days)
+    let arrivalDate = dateOfArrival.setDate(dateOfArrival.getDate() + (days - 7))
+    this.newApplicationDate = this.addOrd(new Date(applicationDay).getDate()) + " " + months[new Date(applicationDay).getMonth()]
+    console.log("Arriving\n" + this.addOrd(new Date(arrivalDate).getDate()) + " " + months[new Date(arrivalDate).getMonth()])
+    console.log("")
+    console.log("Spraying date\n" + this.newApplicationDate)
+    console.log("")
+    this.updateFieldNewDate()
   }
 
 
-  formatReadableDate = (day) => {
-    if (d > 3 && d < 21) return 'th';
-    switch (d % 10) {
-      case 1:
-        return "st";
-      case 2:
-        return "nd";
-      case 3:
-        return "rd";
-      default:
-        return "th";
-    }
+
+  addOrd(n) {
+    let ords = [, 'st', 'nd', 'rd'];
+    let m = n % 100;
+    return n + ((m > 10 && m < 14) ? 'th' : ords[m % 10] || 'th')
   }
+
+
+  updateFieldNewDate() {
+    this.fields.map(field => {
+      if (field.name === this.currentField.name)
+        field.lastSprayed = this.newApplicationDate
+      console.log(field.name + "    ||    " + field.width + "    ||    " + field.length + "    ||    " + field.crop + "    ||    " + field.lastSprayed)
+    })
+  }
+
+
+
 }
 
 module.exports = FarmManager
