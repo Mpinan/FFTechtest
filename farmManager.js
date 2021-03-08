@@ -55,7 +55,7 @@ class FarmManager {
   checkChemicalsFromProvider = () => {
     let chemicals = this.chemicalProvider.getChemicals()
     chemicals.forEach(chemical => {
-      console.log(chemical.name)
+      console.log(chemical.name + "------" + chemical.cropUsage)
     })
   }
 
@@ -74,8 +74,6 @@ class FarmManager {
     return this.currentChemical
 
   }
-
-
 
   checkChemicalArrival = () => {
     this._handleErrors()

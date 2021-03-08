@@ -47,6 +47,16 @@ They process was pretty much straight forward as all the assumptions were given.
 
 ![alt text](https://github.com/jaitone/FFTechtest/raw/main/FFmanager.png)
 
-If a field does not exist, the application will stop with an error.
-If a chemical is not tailored, the application will give a error and stop.
-If a chemical is not properly spelled or doesn't exist, the application will stop.
+
+### Handling errors
+- If a field does not exist, the application will stop with an error.
+
+``` This field does not exist ```
+
+- If a chemical is not tailored, the application will give a error and stop.
+
+```WARNING, Wrong type of chemical for this field```
+
+- If a chemical is not properly spelled or doesn't exist, the application will stop.
+
+```Chemical does not exist```
