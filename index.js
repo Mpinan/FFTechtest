@@ -45,10 +45,7 @@ console.log("")
 console.log("Order new chemical")
 farmManager.orderChemical("Ryezapon")
 
+
 console.log("")
 console.log("Checking chemical arrival and application day")
 farmManager.checkChemicalArrival()
-
-console.log("")
-console.log("Total Price")
-farmManager.calculateTotalPrice()

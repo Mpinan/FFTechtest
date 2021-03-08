@@ -1,5 +1,6 @@
 # FFTechtest
-
+There is a farm called AppleTree Farm. It has 7 fields
+</br>
 | Name |  Width | Length | Crop | Last Sprayed
 | :-----: | :-------:  | :------:  | :------:  | :------: |
 | Cowfield| 300 metres |400 metres |Barley |18th February 
@@ -12,6 +13,10 @@
 
 
 </br>
+</br>
+The farmer has an account with The Happy Chemical Co to provide their chemicals.
+In particular there are the following chemicals that Appletree Farm consistently uses
+
 </br>
 </br>
 
@@ -34,3 +39,14 @@
 Our farm manager needs assistance managing their order catalogue. They want to know
 when they need to order their next batch of each chemical, and how much it will cost them
 
+## Approach and sample
+
+I wanted to create 4 classes from the beggining, two for the products(fields and farm) and two for the managers(Appletree Farm Manager and The Happy Chemical Co).
+
+They process was pretty much straight forward as all the assumptions were given.
+
+![alt text](https://github.com/jaitone/FFTechtest/raw/main/FFmanager.png)
+
+If a field does not exist, the application will stop with an error.
+If a chemical is not tailored, the application will give a error and stop.
+If a chemical is not properly spelled or doesn't exist, the application will stop.
