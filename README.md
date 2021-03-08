@@ -60,3 +60,9 @@ They process was pretty much straight forward as all the assumptions were given.
 - If a chemical is not properly spelled or doesn't exist, the application will stop.
 
 ```Chemical does not exist```
+
+## Usage
+
+- Clone this repository 
+- On the terminal with the same location of the repository, run the program using: `node index.js`
+- If you like to modify input values, on `index.js`, select another Field or another Chemical

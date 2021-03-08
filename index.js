@@ -28,6 +28,8 @@ farmManager.checkAllFields()
 
 console.log("")
 console.log("Selecting a new Field")
+// Select new field: 
+//Cowfield, Top, Hillside, Big Field, Upper River, Lower River, South Side
 farmManager.selectField("Hillside")
 
 console.log("")
@@ -39,9 +41,7 @@ console.log("Checking chemicals from provider")
 farmManager.checkChemicalsFromProvider()
 
 console.log("")
-// "Ryezapon", "Winter Wheat", "£240", "6 weeks"
-// "Berbelikar", "Barley", "£156", "4 weeks"
-// "Quadranis", "Sugar Beet", "£191", "9 weeks"
+// Select new chemical: Ryezapon, Quadranis, Berbelikar
 console.log("Order new chemical")
 farmManager.orderChemical("Ryezapon")
 
