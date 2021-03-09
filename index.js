@@ -1,5 +1,5 @@
-const FarmManager = require("./farmManager")
-const Field = require("./field")
+const FarmManager = require("./lib/farmManager")
+const Field = require("./lib/field")
 farmManager = new FarmManager
 
 let cowfield = new Field("Cowfield", "300 metres", "400 metres", "Barley", "18th February")
